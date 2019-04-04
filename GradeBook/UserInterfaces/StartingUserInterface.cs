@@ -42,13 +42,14 @@ namespace GradeBook.UserInterfaces
             }
             var name = parts[1];
             var type = parts[2];
+            var weighted = Convert.ToBoolean(parts[3]);
             switch (type.ToUpper())
             {
                 case "STANDARD":
-                     gradeBook = new StandardGradeBook(name);
+                     gradeBook = new StandardGradeBook(name, weighted);
                     break;
                 case "RANKED":
-                     gradeBook = new RankedGradeBook(name);
+                     gradeBook = new RankedGradeBook(name, weighted);
                     break;
                 default:
                     Console.WriteLine(type + " is not a supported type of gradebook, please try again");
